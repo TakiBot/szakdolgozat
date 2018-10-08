@@ -489,7 +489,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1873371aba5080a4babe63f9a94d680c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 10
+  resolution: 44
+  autoUpdate: 1
+  faceRenderMask: 0
+  shapeSettings: {fileID: 0}
+  colourSettings: {fileID: 0}
+  shapeSettingsFoldout: 0
+  colourSettingsFoldout: 0
   meshFilters:
   - {fileID: 33554199133245082}
   - {fileID: 33985870635712592}

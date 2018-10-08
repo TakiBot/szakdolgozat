@@ -15,16 +15,16 @@ using UnityEngine.UI;
 public class DropdownListController : MonoBehaviour {
 
     //Antenna List
-    List<string> AntName = new List<string>() { "Antennasample", "OtherAntenna" };
+    List<string> antName = new List<string>() { "Antennasample", "OtherAntenna" };
 
-    public string FilePath;
-    public string Result;
+    public string filePath;
+    public string result;
 
-    //Dropdownbox And TexMeshPro(AntennaName,ManufacturerName) Call For EventHandler
+    //Dropdownbox And TexMeshPro(AntennaName,manufacturerName) Call For EventHandler
     public Dropdown dropdown;
-    public TMPro.TextMeshProUGUI SelectedName;
-    public TMPro.TextMeshProUGUI ManufacturerName;
-    public TMPro.TextMeshProUGUI FileDataPath;
+    public TMPro.TextMeshProUGUI selectedName;
+    public TMPro.TextMeshProUGUI manufacturerName;
+    public TMPro.TextMeshProUGUI fileDataPath;
 
     
       
@@ -33,32 +33,35 @@ public class DropdownListController : MonoBehaviour {
     //Selected Antenna Indexing In The Dropdownbox
     void DropdownIndexChanged(int index)
     {
-         SelectedName.text = AntName[index];
+         selectedName.text = antName[index];
         //Selected Antenna File Path
-        FilePath = (Application.streamingAssetsPath + @"/" + SelectedName.text + @".csv");
-        Result = "";
+        filePath = (Application.streamingAssetsPath + @"/" + selectedName.text + @".csv");
+        result = "";
 
-        if (FilePath.Contains("://"))
+        if (filePath.Contains("://"))
         {
-            UnityWebRequest www = UnityWebRequest.Get(FilePath);
+            UnityWebRequest www = UnityWebRequest.Get(filePath);
             www.SendWebRequest();
-            Result = www.downloadHandler.text;
+            result = www.downloadHandler.text;
+
+            manufacturerName.text = www.downloadHandler.text;
+
         }
         else
         {
             //Is There a File?
             // IF Yes
-            if (File.Exists(FilePath))
+            if (File.Exists(filePath))
             {
                 //Selected Antenna File Lines To List
-                List<string> Linelist = File.ReadAllLines(FilePath).ToList();
+                List<string> Linelist = File.ReadAllLines(filePath).ToList();
                 foreach (string Lines in Linelist)
                 {
                     //The Lines Are Separeted by ','
                     string[] Entries = Lines.Split(',');
 
                     //string Manufacturer = Entries[0];
-                    ManufacturerName.text = Entries[1];
+                    manufacturerName.text = Entries[1];
                 }
             }
             // IF Not
@@ -67,8 +70,8 @@ public class DropdownListController : MonoBehaviour {
                 Debug.Log("File Does Not Exist!");
             }
         }
-        Debug.Log(FilePath);
-        Debug.Log(Result);
+        Debug.Log(filePath);
+        Debug.Log(result);
     }
  
     //Antenna List Upload
@@ -82,13 +85,12 @@ public class DropdownListController : MonoBehaviour {
     //Antenna List To The List Element
     void PopulateList()
     {
-        dropdown.AddOptions(AntName);
+        dropdown.AddOptions(antName);
     }
 
     void DataPath()
     {
-      
-        FileDataPath.text = Result;
+        fileDataPath.text = result;
     }
 
 

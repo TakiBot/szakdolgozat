@@ -11,68 +11,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7312736d401c2914881a349f2f4b5936, type: 3}
   m_Name: Shape
   m_EditorClassIdentifier: 
-  planetRadius: 1.45
+  planetRadius: 1
   noiseLayers:
-  - enabled: 0
-    useFirstLayerAsMask: 0
-    noiseSettings:
-      filterType: 0
-      simpleNoiseSettings:
-        strength: 1
-        numLayers: 1
-        baseRoughness: 1
-        roughness: 2
-        persistence: 0.5
-        centre: {x: 0, y: 0, z: 0}
-        minValue: 0
-      ridgedNoiseSettings:
-        strength: 1
-        numLayers: 1
-        baseRoughness: 1
-        roughness: 2
-        persistence: 0.5
-        centre: {x: 0, y: 0, z: 0}
-        minValue: 0
-        weightMultiplier: 0.8
-  - enabled: 0
-    useFirstLayerAsMask: 1
-    noiseSettings:
-      filterType: 0
-      simpleNoiseSettings:
-        strength: 1
-        numLayers: 1
-        baseRoughness: 1
-        roughness: 2
-        persistence: 0.5
-        centre: {x: 0, y: 0, z: 0}
-        minValue: 0
-      ridgedNoiseSettings:
-        strength: 1
-        numLayers: 1
-        baseRoughness: 1
-        roughness: 2
-        persistence: 0.5
-        centre: {x: 0, y: 0, z: 0}
-        minValue: 0
-        weightMultiplier: 0.8
   - enabled: 1
     useFirstLayerAsMask: 0
     noiseSettings:
       filterType: 0
       simpleNoiseSettings:
-        strength: 1
+        strength: 7.47
         numLayers: 1
-        baseRoughness: 1
-        roughness: 2
-        persistence: 0.5
-        centre: {x: 0, y: 0, z: 0}
-        minValue: 0
+        baseRoughness: 1.12
+        roughness: 4.52
+        persistence: 0.72
+        centre: {x: 0.13, y: 0, z: 0}
+        minValue: 0.08
       ridgedNoiseSettings:
-        strength: 1
-        numLayers: 1
-        baseRoughness: 1
-        roughness: 2
-        persistence: -0.89
+        strength: -0.17
+        numLayers: 2
+        baseRoughness: 6.01
+        roughness: 3.23
+        persistence: 2.97
         centre: {x: 0, y: 0, z: 0}
-        minValue: 0
-        weightMultiplier: 0.8
+        minValue: -2.73
+        weightMultiplier: -1.3
