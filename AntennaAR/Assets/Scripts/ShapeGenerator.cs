@@ -31,7 +31,7 @@ public class ShapeGenerator {
             if (settings.noiseLayers[0].enabled)
             {
 
-                /*if (pointOnUnitSphere.x > 0&& pointOnUnitSphere.y >0.5 && pointOnUnitSphere.z > 0.5 ) {
+                /*if (pointOnUnitSphere.x > 0 && pointOnUnitSphere.y > 0 &&  pointOnUnitSphere.z > 0 ) {
                     elevation = 1.0F;
                 }
                 else {
