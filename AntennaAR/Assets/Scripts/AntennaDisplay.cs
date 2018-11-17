@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class AntennaDisplay : MonoBehaviour {
 
+    //Variable
     public TMPro.TextMeshProUGUI antennaInfo;
     public TMPro.TextMeshProUGUI manufacturerInfo;
     public TMPro.TextMeshProUGUI startFreq;
@@ -20,6 +21,7 @@ public class AntennaDisplay : MonoBehaviour {
         Display();
 	}
 	
+    //Displays the database
 	public void Display() {
 
         foreach (ItemEntry item in XMLManager.instance.antennaDB.list)

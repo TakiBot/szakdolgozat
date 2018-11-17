@@ -24,7 +24,7 @@ public class PlanetEditor : Editor {
         if (GUILayout.Button("Generate Caracteristic"))
         {
             planet.GeneratePlanet();
-        }
+        }    
 
         DrawSettingsEditor(planet.shapeSettings, planet.OnShapeSettingsUpdated, ref planet.shapeSettingsFoldout, ref shapeEditor);
         DrawSettingsEditor(planet.colourSettings, planet.OnColourSettingsUpdated, ref planet.colourSettingsFoldout, ref colourEditor);

@@ -18,19 +18,19 @@ MonoBehaviour:
     noiseSettings:
       filterType: 0
       simpleNoiseSettings:
-        strength: 7.47
-        numLayers: 1
-        baseRoughness: 1.12
-        roughness: 4.52
-        persistence: 0.72
-        centre: {x: 0.13, y: 0, z: 0}
-        minValue: 0.08
-      ridgedNoiseSettings:
-        strength: -0.17
-        numLayers: 2
-        baseRoughness: 6.01
-        roughness: 3.23
-        persistence: 2.97
+        strength: 2.13
+        numLayers: 3
+        baseRoughness: 0.91
+        roughness: 1.3
+        persistence: 0.38
         centre: {x: 0, y: 0, z: 0}
-        minValue: -2.73
-        weightMultiplier: -1.3
+        minValue: 0.45
+      ridgedNoiseSettings:
+        strength: 0
+        numLayers: 0
+        baseRoughness: 0
+        roughness: 0
+        persistence: 0
+        centre: {x: 0, y: 0, z: 0}
+        minValue: 0
+        weightMultiplier: 0
