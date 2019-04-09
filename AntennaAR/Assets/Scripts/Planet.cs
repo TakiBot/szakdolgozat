@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Planet : MonoBehaviour {
 
+    [Header("Characteristic Settings:")]
     [Range(2,256)]
     public int resolution = 10;
     public bool autoUpdate = true;
@@ -12,11 +14,13 @@ public class Planet : MonoBehaviour {
 
     public ShapeSettings shapeSettings;
     public ColourSettings colourSettings;
+    
 
     [HideInInspector]
     public bool shapeSettingsFoldout;
     [HideInInspector]
     public bool colourSettingsFoldout;
+    
 
     ShapeGenerator shapeGenerator = new ShapeGenerator();
     ColourGenerator colourGenerator = new ColourGenerator();
@@ -25,8 +29,17 @@ public class Planet : MonoBehaviour {
     MeshFilter[] meshFilters;
     TerrainFace[] terrainFaces;
 
+    [Header("Settings Menu UI Elements:")]
+    public Slider slider;
+    public Toggle toggle;
 
-    void Initialize()
+     void Start()
+    {
+        slider.value = resolution;
+        toggle.isOn = autoUpdate;
+    }
+
+    public void Initialize()
     {
         shapeGenerator.UpdateSettings(shapeSettings);
         colourGenerator.UpdateSettings(colourSettings);
@@ -99,5 +112,18 @@ public class Planet : MonoBehaviour {
     void GenerateColours()
     {
             colourGenerator.UpdateColours();
+    }
+
+    public void SettingsResolution(float newRes)
+    {
+        resolution = (int)newRes;
+        Initialize();    
+    }
+
+    public void SettingsAutoUpdate(bool newAutoUpdate)
+    {
+        autoUpdate = newAutoUpdate;
+        OnShapeSettingsUpdated();
+        OnColourSettingsUpdated();
     }
 }
